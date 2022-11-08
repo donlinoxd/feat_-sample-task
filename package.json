@@ -1,0 +1,55 @@
+{
+    "author": {
+        "email": "erik.sherman@dashrd.com",
+        "name": "Erik Sherman"
+    },
+    "name": "sample-ts-nextjs-storybook",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "prebuild": "ts-node -r tsconfig-paths/register runner.ts",
+        "dev": "npm run prebuild && next dev -p 8000",
+        "start": "next start -p 8000",
+        "build": "next build",
+        "lint": "next lint",
+        "storybook": "start-storybook -p 6006 -s ./public",
+        "build-storybook": "build-storybook -s public",
+        "bratus": "rm -f ./.react-bratus/data.json && npm run runbratus",
+        "runbratus": "node ~/Files/programming/js/react-bratus/packages/bratus-cli/bin -l -p"
+    },
+    "dependencies": {
+        "@chakra-ui/react": "^2.3.6",
+        "@emotion/react": "^11.10.4",
+        "@emotion/styled": "^11.10.4",
+        "firebase": "^9.12.1",
+        "framer-motion": "^6.5.1",
+        "isomorphic-fetch": "^3.0.0",
+        "next": "12.3.1",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-firebase-hooks": "^5.0.3",
+        "react-hook-form": "^7.38.0",
+        "ts-node": "^10.9.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.19.6",
+        "@chakra-ui/storybook-addon": "^4.0.12",
+        "@storybook/addon-actions": "^6.5.13",
+        "@storybook/addon-essentials": "^6.5.13",
+        "@storybook/addon-interactions": "^6.5.13",
+        "@storybook/addon-links": "^6.5.13",
+        "@storybook/builder-webpack5": "^6.5.13",
+        "@storybook/manager-webpack5": "^6.5.13",
+        "@storybook/react": "^6.5.13",
+        "@storybook/testing-library": "^0.0.13",
+        "@types/node": "18.11.3",
+        "@types/react": "18.0.21",
+        "@types/react-dom": "18.0.6",
+        "babel-loader": "^8.2.5",
+        "eslint": "8.26.0",
+        "eslint-config-next": "12.3.1",
+        "eslint-plugin-storybook": "^0.6.6",
+        "prettier": "2.7.1",
+        "typescript": "4.8.4"
+    }
+}
