@@ -26,32 +26,3 @@ export interface AreaOfFocusType {
      */
     secondary_color: string
 }
-
-/**
- * describes a language that a Client or Professional speaks
- */
-export interface LanguageType {
-    /**
-     * unique identifier for the language
-     */
-    id: string
-    /**
-     * text that describes the language in plain english
-     */
-    text: string
-}
-
-/**
- * describes the identity of a Professional
- */
-export interface IdentityType {
-    /**
-     * unique identifier for the identity
-     */
-    id: string
-
-    /**
-     * text that describes the identity in plain english
-     */
-    text: string
-}
