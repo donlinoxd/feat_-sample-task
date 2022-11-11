@@ -1,5 +1,6 @@
 import { AreaOfFocusType } from 'lib/types'
-import Image from 'next/image'
+import { useState } from 'react'
+import AreasOfFocusSelector from './AreasOfFocusSelector'
 
 interface Props {
     /**
@@ -14,16 +15,19 @@ interface Props {
  * UI design: https://www.figma.com/file/f4PqVjtJnM8ECBHKQJrkgd/MeTimeVar1?node-id=1085%3A21205
  */
 export default function AreasOfFocusController({ all_areas_of_focus }: Props) {
+    const [selectedAreasOfFocus, setSelectedAreasOfFocus] = useState<AreaOfFocusType['id'][]>([])
+
+    const onSelect = (aof_id: string) => {
+        setSelectedAreasOfFocus((areas) => [...areas, aof_id])
+    }
+
+    const onDeselect = (aof_id: string) => {
+        setSelectedAreasOfFocus((areas) => areas.filter((area) => area !== aof_id))
+    }
+
     return (
-        <>
-            <Image
-                src='https://drive.google.com/uc?export=view&id=1I_VmSQsMasurogCtHUYKZqUzb73FdPxF'
-                alt='areas of focus'
-                width={500}
-                height={500}
-                layout='responsive'
-                objectFit='contain'
-            />
-        </>
+        <AreasOfFocusSelector
+            {...{ all_areas_of_focus, onSelect, onDeselect, selected_areas_of_focus_ids: selectedAreasOfFocus }}
+        />
     )
 }
